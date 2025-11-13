@@ -1,0 +1,7 @@
+@import 'tailwindcss';
+
+@font-face {
+  font-family: "Poppins";
+  src: url('/Exam/public/Poppins-Bold.ttf')
+}
+
