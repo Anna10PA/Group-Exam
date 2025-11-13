@@ -10,33 +10,41 @@ function MainDiv() {
     // calculate
     let calculate = (day, month, year) => {
         const curentTime = new Date()
-        const curentDay = curentTime.getDate()
-        const curentMonth = curentTime.getMonth() + 1
-        const curentYear = curentTime.getFullYear()
+        const curentDay = Number(curentTime.getDate())
+        const curentMonth = Number(curentTime.getMonth()) + 1
+        const curentYear = Number(curentTime.getFullYear())
 
         if (curentYear < year) {
             setError('invalid')
         }
-        
-        // calculate year 
-        let resultYear = curentYear - year 
-        let resultMonth = curentMonth - month 
-        let resultDay = curentDay - day 
 
-        if (resultMonth < 0 || resultMonth === 0  && resultDay < 0) {
-            resultYear --
+        // calculate
+        let resultYear = curentYear - year
+        let resultMonth = curentMonth - month
+        let resultDay = curentDay - day
+
+        if (resultDay < 0) {
+            let getMonthsDays = new Date(curentYear, curentMonth-1, 0).getDate()
+            resultDay += getMonthsDays
+            resultMonth--
+
+        } if (resultMonth <= 0) {
             resultMonth += 12
+            resultYear--
         }
 
-        console.log(resultMonth, resultYear)
+        console.log(curentDay, resultDay)
+        setDay(resultDay)
+        setMonth(resultMonth)
+        setYears(resultYear)
     }
 
 
     // error check
     let checkError = (e) => {
-        let userDay = e.target.day.value
-        let userMonth = e.target.month.value
-        let userYear = e.target.year.value
+        let userDay = Number(e.target.day.value)
+        let userMonth = Number(e.target.month.value)
+        let userYear = Number(e.target.year.value)
 
         if (!userDay || !userMonth || !userYear) {
             setError('Must be full')
@@ -44,6 +52,7 @@ function MainDiv() {
             calculate(userDay, userMonth, userYear)
         }
     }
+    
     return (
         <form className='bg-white max-w-[800px] w-[90%] min-h-[500px] rounded-[20px] p-[50px] flex flex-col gap-[50px] rounded-br-[30%]' onSubmit={(e) => {
             e.preventDefault()
