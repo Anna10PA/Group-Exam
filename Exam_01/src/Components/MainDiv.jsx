@@ -54,26 +54,26 @@ function MainDiv() {
     }
     
     return (
-        <form className='bg-white max-w-[800px] w-[90%] min-h-[500px] rounded-[20px] p-[50px] flex flex-col gap-[50px] rounded-br-[30%]' onSubmit={(e) => {
+        <form className='bg-white max-w-[800px] w-[90%] min-h-[500px] rounded-[20px] p-[50px] flex flex-col gap-[50px] rounded-br-[30%] max-md:p-[35px]' onSubmit={(e) => {
             e.preventDefault()
             checkError(e)
         }}>
 
             {/* task 001 */}
-            <div className='flex items-center justify-start gap-[30px]'>
+            <div className='flex items-center justify-start gap-[30px] max-md:gap-[20px]'>
                 <div className='flex flex-col items-start gap-[10px]'>
-                    <h1 className={`tracking-[3px] font-[800] font-Poppins ${!isError ? 'text-[hsl(0,1%,44%)]' : 'text-[hsl(0,100%,67%)]'} text-[14px]`}>DAY</h1>
-                    <input type="number" className={`border border-[1px] ${!isError ? 'border-[hsl(0,0%,94%)]' : 'text-[hsl(0,100%,67%)]'} w-[160px] pl-[20px] py-[10px] outline-none rounded-[5px] text-[32px] font-[800]`} name='day' />
+                    <h1 className={`tracking-[3px] font-[700] font-Poppins ${!isError ? 'text-[hsl(0,1%,44%)]' : 'text-[hsl(0,100%,67%)]'} text-[14px]`}>DAY</h1>
+                    <input type="number" className={`border border-[1px] ${!isError ? 'border-[hsl(0,0%,94%)]' : 'text-[hsl(0,100%,67%)]'} w-[160px] pl-[20px] py-[10px] outline-none rounded-[5px] text-[32px] font-[800] max-md:w-[80px] max-md:text-[20px] max-md:pl-[10px]`} name='day' />
                     <span className={`${isError ? 'block' : 'hidden'} text-[hsl(0,100%,67%)]`}>{isError} day</span>
                 </div>
                 <div className='flex flex-col items-start gap-[10px]'>
-                    <h1 className={`tracking-[3px] font-[800] font-Poppins ${!isError ? 'text-[hsl(0,1%,44%)]' : 'text-[hsl(0,100%,67%)]'} text-[14px]`}>MONTH</h1>
-                    <input type="number" className={`border border-[1px] ${!isError ? 'border-[hsl(0,0%,94%)]' : 'text-[hsl(0,100%,67%)]'} w-[160px] pl-[20px] py-[10px] outline-none rounded-[5px] text-[32px] font-[800]`} name='month' />
+                    <h1 className={`tracking-[3px] font-[700] font-Poppins ${!isError ? 'text-[hsl(0,1%,44%)]' : 'text-[hsl(0,100%,67%)]'} text-[14px]`}>MONTH</h1>
+                    <input type="number" className={`border border-[1px] ${!isError ? 'border-[hsl(0,0%,94%)]' : 'text-[hsl(0,100%,67%)]'} w-[160px] pl-[20px] py-[10px] outline-none rounded-[5px] text-[32px] font-[800] max-md:w-[80px] max-md:text-[20px] max-md:pl-[10px]`} name='month' />
                     <span className={`${isError ? 'block' : 'hidden'} text-[hsl(0,100%,67%)]`}>{isError} month</span>
                 </div>
                 <div className='flex flex-col items-start gap-[10px]'>
-                    <h1 className={`tracking-[3px] font-[800] font-Poppins ${!isError ? 'text-[hsl(0,1%,44%)]' : 'text-[hsl(0,100%,67%)]'} text-[14px]`}>YEAR</h1>
-                    <input type="number" className={`border border-[1px] ${!isError ? 'border-[hsl(0,0%,94%)]' : 'text-[hsl(0,100%,67%)]'} w-[160px] pl-[20px] py-[10px] outline-none rounded-[5px] text-[32px] font-[800]`} name='year' />
+                    <h1 className={`tracking-[3px] font-[700] font-Poppins ${!isError ? 'text-[hsl(0,1%,44%)]' : 'text-[hsl(0,100%,67%)]'} text-[14px]`}>YEAR</h1>
+                    <input type="number" className={`border border-[1px] ${!isError ? 'border-[hsl(0,0%,94%)]' : 'text-[hsl(0,100%,67%)]'} w-[160px] pl-[20px] py-[10px] outline-none rounded-[5px] text-[32px] font-[800] max-md:w-[80px] max-md:text-[20px] max-md:pl-[10px]`} name='year' />
                     <span className={`${isError ? 'block' : 'hidden'} text-[hsl(0,100%,67%)]`}>{isError} year</span>
                 </div>
             </div>
@@ -81,8 +81,8 @@ function MainDiv() {
             {/* task 002 */}
             <div className='relative flex items-center'>
                 <hr className='border-[hsl(0,0%,94%)] w-full' />
-                <button className='bg-[#854DFD] h-[70px] w-[70px] rounded-[50%] flex items-center justify-center absolute right-0'>
-                    <img src="/icon-arrow.svg" />
+                <button className='bg-[#854DFD] h-[70px] w-[70px] rounded-[50%] flex items-center justify-center absolute right-0 max-md:h-[50px] max-md:w-[50px]'>
+                    <img src="/icon-arrow.svg" className='max-md:w-[70%]' />
                 </button>
             </div>
 
